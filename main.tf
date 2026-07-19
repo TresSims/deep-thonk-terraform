@@ -2,6 +2,6 @@ module "vault" {
   source = "./vault"
 }
 
-module "garage" {
-  source = "./garage"
+module "technitium" {
+  source = "./technitium"
 }
