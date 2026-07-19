@@ -6,13 +6,18 @@ terraform {
     }
 
     kubernetes = {
-      source = "hashicorp/kubernetes"
+      source  = "hashicorp/kubernetes"
       version = ">= 3.0.1"
     }
 
     random = {
-      source = "hashicorp/random"
+      source  = "hashicorp/random"
       version = "3.8.1"
+    }
+
+    technitium = {
+      source  = "registry.terraform.io/bartei/technitium"
+      version = "1.0.1"
     }
   }
 }
@@ -22,9 +27,14 @@ provider "vault" {
 }
 
 provider "kubernetes" {
-  config_path = "~/.kube/config"
+  config_path    = "~/.kube/config"
   config_context = "k8s"
 }
 
 provider "random" {
+}
+
+provider "technitium" {
+  server_url = var.technitium_server_url
+  api_token  = var.technitium_api_token
 }
