@@ -2,6 +2,8 @@ module "vault" {
   source = "./vault"
 }
 
-module "garage" {
-  source = "./garage"
+module "kubernetes" {
+  source = "./kubernetes"
+  
+  kubernetes_mount = module.vault.kubernetes_mount
 }
