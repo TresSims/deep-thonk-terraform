@@ -28,7 +28,7 @@ provider "vault" {
 
 provider "kubernetes" {
   config_path    = "~/.kube/config"
-  config_context = "k8s"
+  config_context = "admin@k8s-deep-thonk"
 }
 
 provider "random" {
