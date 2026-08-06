@@ -19,6 +19,11 @@ terraform {
       source  = "registry.terraform.io/bartei/technitium"
       version = "1.0.1"
     }
+
+    tailscale = {
+      source  = "tailscale/tailscale"
+      version = "0.29.2"
+    }
   }
 }
 
@@ -37,4 +42,9 @@ provider "random" {
 provider "technitium" {
   server_url = var.technitium_server_url
   api_token  = var.technitium_api_token
+}
+
+provider "tailscale" {
+  api_key = var.tailscale_api_token
+  tailnet = "taile812.ts.net"
 }
