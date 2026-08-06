@@ -1,5 +1,5 @@
 locals {
-  namespaces = toset(["o11y", "media-server", "technitium"])
+  namespaces = toset(["o11y", "media-server", "technitium", "tailscale"])
 }
 
 resource "vault_policy" "external_secrets" {
